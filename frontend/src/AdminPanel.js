@@ -226,8 +226,8 @@ function AdminPanel() {
                         <div className="modal-window">
                             <h3>Edycja konta</h3>
                             <div className="modal-content">
-                            <label className="modal-content-row modal-user-line">Nazwa: {userToEdit.first_name || ""}></label>
-                                    onChange={(e) => setUserToEdit({...userToEdit, first_name: e.target.value, })}/></label>
+                            <label className="modal-content-row modal-user-line">Nazwa: <input type="text" value={userToEdit.first_name || ""} 
+                                    onChange={(e) => setUserToEdit({...userToEdit, first_name: e.target.value, username: e.target.value })}/></label>
                             <label className="modal-content-row modal-user-line">Email: <input type="text" value={userToEdit.user_email || ""} 
                                     onChange={(e) => setUserToEdit({...userToEdit, user_email: e.target.value, username: e.target.value })}/></label>
                             <label className="modal-content-row modal-user-line">Staff: <input type="checkbox" checked={userToEdit.is_staff} 
@@ -250,7 +250,7 @@ function AdminPanel() {
                         <div className="modal-window">
                             <h3>Edycja zapisu kalkulatora</h3>
                             <div className="modal-content">
-                            <label className="modal-content-row modal-user-line">Id: <input type="text" value={calculatorToEdit.id || ""}/></label>
+                            <label className="modal-content-row modal-user-line">Id: {calculatorToEdit.id || ""}/></label>
                             <label className="modal-content-row modal-user-line">Użytkownik: <input type="text" value={calculatorToEdit.user || ""} 
                                     onChange={(e) => setCalculatorToEdit({...calculatorToEdit, user: e.target.value, })}/></label>
                             <label className="modal-content-row modal-user-line">Nazwa: <input type="text" value={calculatorToEdit.name || ""} 
