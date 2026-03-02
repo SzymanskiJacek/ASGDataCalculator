@@ -25,7 +25,7 @@ function AdminPanel() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    username: userToEdit.username,
+                    username: userToEdit.email,
                     email: userToEdit.email,
                     first_name: userToEdit.first_name,
                     is_staff: userToEdit.is_staff,
@@ -227,9 +227,9 @@ function AdminPanel() {
                             <h3>Edycja konta</h3>
                             <div className="modal-content">
                             <label className="modal-content-row modal-user-line">Nazwa: <input type="text" value={userToEdit.first_name || ""} 
-                                    onChange={(e) => setUserToEdit({...userToEdit, first_name: e.target.value, username: e.target.value })}/></label>
-                            <label className="modal-content-row modal-user-line">Email: <input type="text" value={userToEdit.user_email || ""} 
-                                    onChange={(e) => setUserToEdit({...userToEdit, user_email: e.target.value, username: e.target.value })}/></label>
+                                    onChange={(e) => setUserToEdit({...userToEdit, first_name: e.target.value,})}/></label>
+                            <label className="modal-content-row modal-user-line">Email: <input type="text" value={userToEdit.email || ""} 
+                                    onChange={(e) => setUserToEdit({...userToEdit, email: e.target.value,})}/></label>
                             <label className="modal-content-row modal-user-line">Staff: <input type="checkbox" checked={userToEdit.is_staff} 
                                     onChange={(e) => setUserToEdit({...userToEdit, is_staff: e.target.checked, })}/></label>
                             <label className="modal-content-row modal-user-line">Superuser: <input type="checkbox" checked={userToEdit.is_superuser} 
@@ -250,9 +250,9 @@ function AdminPanel() {
                         <div className="modal-window">
                             <h3>Edycja zapisu kalkulatora</h3>
                             <div className="modal-content">
-                            <label className="modal-content-row modal-user-line">Id: {calculatorToEdit.id || ""}/></label>
-                            <label className="modal-content-row modal-user-line">Użytkownik: <input type="text" value={calculatorToEdit.user || ""} 
-                                    onChange={(e) => setCalculatorToEdit({...calculatorToEdit, user: e.target.value, })}/></label>
+                            <label className="modal-content-row modal-user-line">Id: {calculatorToEdit.id || ""}</label>
+                            <label className="modal-content-row modal-user-line">Użytkownik: <input type="text" value={calculatorToEdit.user_email || ""} 
+                                    onChange={(e) => setCalculatorToEdit({...calculatorToEdit, user_email: e.target.value, })}/></label>
                             <label className="modal-content-row modal-user-line">Nazwa: <input type="text" value={calculatorToEdit.name || ""} 
                                     onChange={(e) => setCalculatorToEdit({...calculatorToEdit, name: e.target.value, })}/></label>
                             <label className="modal-content-row modal-user-line">Data Utworzenia: <input type="text" value={calculatorToEdit.created_at || ""} 
