@@ -167,7 +167,6 @@ function AdminPanel() {
                         <thead>
                         <tr>
                             <th>Nazwa</th>
-                            <th>Username</th>
                             <th>Email</th>
                             <th>Staff</th>
                             <th>Superuser</th>
@@ -180,7 +179,6 @@ function AdminPanel() {
                         {users.map((r) => (
                             <tr key={r.id}>
                                 <td>{r.first_name}</td>
-                                <td>{r.username}</td>
                                 <td>{r.email}</td>
                                 <td>{r.is_staff ? "YES" : "NO"}</td>
                                 <td>{r.is_superuser ? "YES" : "NO"}</td>
@@ -228,10 +226,10 @@ function AdminPanel() {
                         <div className="modal-window">
                             <h3>Edycja konta</h3>
                             <div className="modal-content">
-                            <label className="modal-content-row modal-user-line">Nazwa: <input type="text" value={userToEdit.first_name || ""} 
+                            <label className="modal-content-row modal-user-line">Nazwa: {userToEdit.first_name || ""} 
                                     onChange={(e) => setUserToEdit({...userToEdit, first_name: e.target.value, })}/></label>
-                            <label className="modal-content-row modal-user-line">Email: <input type="text" value={userToEdit.email || ""} 
-                                    onChange={(e) => setUserToEdit({...userToEdit, email: e.target.value, username: e.target.value })}/></label>
+                            <label className="modal-content-row modal-user-line">Email: <input type="text" value={userToEdit.user_email || ""} 
+                                    onChange={(e) => setUserToEdit({...userToEdit, user_email: e.target.value, username: e.target.value })}/></label>
                             <label className="modal-content-row modal-user-line">Staff: <input type="checkbox" checked={userToEdit.is_staff} 
                                     onChange={(e) => setUserToEdit({...userToEdit, is_staff: e.target.checked, })}/></label>
                             <label className="modal-content-row modal-user-line">Superuser: <input type="checkbox" checked={userToEdit.is_superuser} 
