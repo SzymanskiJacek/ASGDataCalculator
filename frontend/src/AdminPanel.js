@@ -226,7 +226,7 @@ function AdminPanel() {
                         <div className="modal-window">
                             <h3>Edycja konta</h3>
                             <div className="modal-content">
-                            <label className="modal-content-row modal-user-line">Nazwa: {userToEdit.first_name || ""} 
+                            <label className="modal-content-row modal-user-line">Nazwa: {userToEdit.first_name || ""}></label>
                                     onChange={(e) => setUserToEdit({...userToEdit, first_name: e.target.value, })}/></label>
                             <label className="modal-content-row modal-user-line">Email: <input type="text" value={userToEdit.user_email || ""} 
                                     onChange={(e) => setUserToEdit({...userToEdit, user_email: e.target.value, username: e.target.value })}/></label>
