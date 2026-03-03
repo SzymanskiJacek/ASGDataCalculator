@@ -256,12 +256,8 @@ function AdminPanel() {
                             <h3>Edycja zapisu kalkulatora</h3>
                             <div className="modal-content">
                             <label className="modal-content-row modal-user-line">Id: {calculatorToEdit.id || ""}</label>
-                            <label className="modal-content-row modal-user-line">Użytkownik: <input type="text" value={calculatorToEdit.user_email || ""} 
-                                    onChange={(e) => setCalculatorToEdit({...calculatorToEdit, user_email: e.target.value, })}/></label>
                             <label className="modal-content-row modal-user-line">Użytkownik ID: <input type="number" value={calculatorToEdit.user_id || ""} 
                                     onChange={(e) => setCalculatorToEdit({...calculatorToEdit, user_id: e.target.value, })}/></label>
-                            <label className="modal-content-row modal-user-line">Użytkownik Email: <input type="text" value={calculatorToEdit.user_email || ""} 
-                                    onChange={(e) => setCalculatorToEdit({...calculatorToEdit, user_email: e.target.value, })}/></label>
                             <label className="modal-content-row modal-user-line">Nazwa: <input type="text" value={calculatorToEdit.name || ""} 
                                     onChange={(e) => setCalculatorToEdit({...calculatorToEdit, name: e.target.value, })}/></label>
                             <label className="modal-content-row modal-user-line">Data Utworzenia: {calculatorToEdit.created_at || ""} 
