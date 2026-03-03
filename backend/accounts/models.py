@@ -5,8 +5,9 @@ class SavedCalculator(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=120)
     data = models.JSONField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField()
 
     def __str__(self):
         return f"{self.name} (user_id={self.user.email})"
+
 
