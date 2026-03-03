@@ -265,7 +265,7 @@ function AdminPanel() {
                             <label className="modal-content-row modal-user-line">Nazwa: <input type="text" value={calculatorToEdit.name || ""} 
                                     onChange={(e) => setCalculatorToEdit({...calculatorToEdit, name: e.target.value, })}/></label>
                             <label className="modal-content-row modal-user-line">Data Utworzenia: {calculatorToEdit.created_at || ""} 
-                                    <button type="button" onClick={() => setCalculatorToEdit({...calculatorToEdit, created_at: new Date().toISOString()})}>Zaktualizuj</button>
+                                    <button type="button" onClick={() => setCalculatorToEdit({...calculatorToEdit, created_at: new Date().toISOString()})}>Zaktualizuj</button></label>
                             </div>
                             <div>
                                     <button onClick={editCalculator}>Zapisz</button>
