@@ -57,7 +57,7 @@ function Tables() {
         .filter(i => i !== null);
 
     const getWindArrow = (degree) => { 
-        const directions = ["⬆️", "↗️", "➡️", "↘️", "⬇️", "↙️", "⬅️", "↖️"];
+        const directions = ["⬇️", "↙️", "⬅️", "↖️", "⬆️", "↗️", "➡️", "↘️"];
         const index = Math.round(degree/45)%8;
         return directions[index];
     };
@@ -103,6 +103,7 @@ function Tables() {
 
 
 export default Tables;
+
 
 
 
