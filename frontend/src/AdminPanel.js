@@ -61,8 +61,8 @@ function AdminPanel() {
                 body: JSON.stringify({
                     id: calculatorToEdit.id,
                     name: calculatorToEdit.name,
-                    user: calculatorToEdit.user,
                     created_at: calculatorToEdit.created_at,
+                    user: calculatorToEdit.user_id,
                 }),
             });
             if (!res.ok) throw new Error("Błąd edycji");
@@ -166,6 +166,7 @@ function AdminPanel() {
                     <table border="1" cellPadding="10" style={{borderCollapse: "collapse", marginBottom: "2rem"}}>
                         <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Nazwa</th>
                             <th>Email</th>
                             <th>Staff</th>
@@ -178,6 +179,7 @@ function AdminPanel() {
                         <tbody>
                         {users.map((r) => (
                             <tr key={r.id}>
+                                <td>{r.id}</td>
                                 <td>{r.first_name}</td>
                                 <td>{r.email}</td>
                                 <td>{r.is_staff ? "YES" : "NO"}</td>
@@ -199,7 +201,8 @@ function AdminPanel() {
                         <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Użytkownik</th>
+                            <th>Użytkownik Id</th>
+                            <th>Użytkownik Email</th>
                             <th>Nazwa</th>
                             <th>Data Utworzenia</th>
                             <th>Edytuj</th>
@@ -210,6 +213,7 @@ function AdminPanel() {
                         {savedCalculators.map((r) => (
                             <tr key={r.id}>
                                 <td>{r.id}</td>
+                                <td>{r.user_id}</td>
                                 <td>{r.user_email}</td>
                                 <td>{r.name}</td>
                                 <td>{r.created_at}</td>
@@ -226,6 +230,7 @@ function AdminPanel() {
                         <div className="modal-window">
                             <h3>Edycja konta</h3>
                             <div className="modal-content">
+                            <label className="modal-content-row modal-user-line">Id: {userToEdit.id || ""}</label>
                             <label className="modal-content-row modal-user-line">Nazwa: <input type="text" value={userToEdit.first_name || ""} 
                                     onChange={(e) => setUserToEdit({...userToEdit, first_name: e.target.value,})}/></label>
                             <label className="modal-content-row modal-user-line">Email: <input type="text" value={userToEdit.email || ""} 
@@ -253,10 +258,14 @@ function AdminPanel() {
                             <label className="modal-content-row modal-user-line">Id: {calculatorToEdit.id || ""}</label>
                             <label className="modal-content-row modal-user-line">Użytkownik: <input type="text" value={calculatorToEdit.user_email || ""} 
                                     onChange={(e) => setCalculatorToEdit({...calculatorToEdit, user_email: e.target.value, })}/></label>
+                            <label className="modal-content-row modal-user-line">Użytkownik ID: <input type="number" value={calculatorToEdit.user_id || ""} 
+                                    onChange={(e) => setCalculatorToEdit({...calculatorToEdit, user_id: e.target.value, })}/></label>
+                            <label className="modal-content-row modal-user-line">Użytkownik Email: <input type="text" value={calculatorToEdit.user_email || ""} 
+                                    onChange={(e) => setCalculatorToEdit({...calculatorToEdit, user_email: e.target.value, })}/></label>
                             <label className="modal-content-row modal-user-line">Nazwa: <input type="text" value={calculatorToEdit.name || ""} 
                                     onChange={(e) => setCalculatorToEdit({...calculatorToEdit, name: e.target.value, })}/></label>
-                            <label className="modal-content-row modal-user-line">Data Utworzenia: <input type="text" value={calculatorToEdit.created_at || ""} 
-                                    onChange={(e) => setCalculatorToEdit({...calculatorToEdit, created_at: e.target.value, })}/></label>
+                            <label className="modal-content-row modal-user-line">Data Utworzenia: {calculatorToEdit.created_at || ""} 
+                                    <button type="button" onClick={() => setCalculatorToEdit({...calculatorToEdit, created_at: new Date().toISOString()})}>Zaktualizuj</button>
                             </div>
                             <div>
                                     <button onClick={editCalculator}>Zapisz</button>
