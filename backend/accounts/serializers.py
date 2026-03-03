@@ -100,9 +100,11 @@ class UsersSerializer(serializers.ModelSerializer):
 
 class SavedCalculatorsSerializer(serializers.ModelSerializer):
     user_email = serializers.EmailField(source='user.email')
+    user_id = serializers.EmailField(source='user.id')
     class Meta:
         model = SavedCalculator
-        fields = ['id', 'user_email', 'name', 'created_at']
+        fields = ['id', 'user_email', 'name', 'created_at, 'user_id']
+
 
 
 
