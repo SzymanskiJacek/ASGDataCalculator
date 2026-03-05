@@ -153,7 +153,7 @@ function AdminPanel() {
     }, []);
 
     if (loading) return <p>Loading...</p>;
-    if (error) return <p style={{color: "red"}}>Error {error}</p>;
+    if (error) return <p className="error">Error {error}</p>;
 
     return (
         <div>
@@ -163,7 +163,7 @@ function AdminPanel() {
                 {users.length === 0 ? (
                     <p>Brak danych.</p>
                 ) : (
-                    <table border="1" cellPadding="10" style={{borderCollapse: "collapse", marginBottom: "2rem"}}>
+                    <table className="table">
                         <thead>
                         <tr>
                             <th>Id</th>
@@ -197,7 +197,7 @@ function AdminPanel() {
                 {savedCalculators.length === 0 ? (
                     <p>Brak danych.</p>
                 ) : (
-                    <table border="1" cellPadding="10" style={{borderCollapse: "collapse", marginBottom: "2rem"}}>
+                    <table className="table">
                         <thead>
                         <tr>
                             <th>Id</th>
