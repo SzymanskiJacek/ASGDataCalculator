@@ -82,11 +82,12 @@ function Register({ onAuth }) {
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
             <input type="password" placeholder="RepeatPassword" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)}/>
             <button type="submit">Register</button>
-            {error && <p className="error"}>{error}</p>}
+            {error && <p className="error">{error}</p>}
         </form>
     );
 }
 
 export default Register;
+
 
 
