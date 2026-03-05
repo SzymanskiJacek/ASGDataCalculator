@@ -65,8 +65,8 @@ function App() {
                   </>
               ) : (
                   <>
-                      <Link to="/login">Sign in</Link>
-                      <Link to="/register">Sign up</Link>
+                      <Link to="/login">Logowanie</Link>
+                      <Link to="/register">Rejestracja</Link>
                   </>
               )}
           </div>
