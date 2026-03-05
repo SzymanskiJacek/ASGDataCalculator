@@ -74,7 +74,7 @@ function Tables() {
             </select>
                 {loading && <p>Loading...</p>}
                 {weather && (
-                    <table>
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th>Godzina</th>
@@ -103,6 +103,7 @@ function Tables() {
 
 
 export default Tables;
+
 
 
 
