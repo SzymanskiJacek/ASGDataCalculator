@@ -34,13 +34,20 @@ nav a:hover{
     background: darkgray;
 }
 
+.error{
+    color: red;
+}
 
+.table{
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
 
-/* ------- tables css start -------- */
-
-/* ------- tables css end -------- */
-
-/* ------- calculator css start -------- */
+.table th,
+.table td{
+    border: 1px solid black;
+    padding: 10px;
+}
 
 .calculator-site{
     width: 100%;
@@ -199,8 +206,4 @@ nav a:hover{
 .button-logout:hover{
     background: darkgray;
 }
-
-/* ------- calculator css end -------- */
-
-
 
