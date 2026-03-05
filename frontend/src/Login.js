@@ -48,7 +48,7 @@ function Login({ onAuth }) {
 
     return (
         <form onSubmit={handleLogin}>
-            <h2>Login</h2>
+            <h2>Zaloguj się</h2>
             <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
             <button type="submit">Login</button>
@@ -58,6 +58,7 @@ function Login({ onAuth }) {
 
 }
 export default Login;
+
 
 
 
