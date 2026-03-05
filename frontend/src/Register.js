@@ -76,7 +76,7 @@ function Register({ onAuth }) {
 
     return (
         <form onSubmit={handleRegister}>
-            <h2>Register</h2>
+            <h2>Zarejestruj się</h2>
             <input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
             <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
@@ -88,3 +88,4 @@ function Register({ onAuth }) {
 }
 
 export default Register;
+
